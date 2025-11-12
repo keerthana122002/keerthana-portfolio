@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cargo Management System | Keerthana S</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<style>
+:root{--bg:#0b101a;--card:#101726;--text:#e6eefc;--muted:#93a1b6;--accent:#ff6b6b;--accent2:#8b5cf6;--radius:18px}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif}
+.container{max-width:980px;margin:auto;padding:40px 20px}
+.header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+h1{font-family:Poppins,Inter,sans-serif;font-size:38px;margin:10px 0}
+.highlight{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;color:transparent}
+.lead{color:var(--muted);font-size:18px;margin:8px 0 22px}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:22px;margin:14px 0}
+.sub{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+h2{font-family:Poppins,Inter,sans-serif;margin:0 0 8px}
+p{color:var(--muted);line-height:1.7;margin:0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:820px){.grid{grid-template-columns:1fr}}
+.btn{display:inline-flex;align-items:center;gap:10px;margin-top:18px;padding:10px 16px;border-radius:999px;text-decoration:none;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent2))}
+.hero-img{width:100%;border-radius:14px;border:1px solid rgba(255,255,255,.08)}
+.small{font-size:14px}
+.back{display:inline-flex;align-items:center;gap:8px;margin-top:30px;color:#fff;text-decoration:none;background:transparent;border:1px solid rgba(255,255,255,.2);padding:10px 14px;border-radius:12px}
+
+/* --- References Slider --- */
+.slider{position:relative;margin-top:18px}
+.slider .viewport{
+  display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;
+  padding-bottom:8px;scroll-behavior:smooth
+}
+.slider .viewport::-webkit-scrollbar{height:8px}
+.slider .viewport::-webkit-scrollbar-track{background:rgba(255,255,255,.06);border-radius:999px}
+.slider .viewport::-webkit-scrollbar-thumb{background:rgba(255,255,255,.18);border-radius:999px}
+.slide{
+  flex:0 0 86%;max-width:86%;
+  background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.08);border-radius:16px;scroll-snap-align:center
+}
+@media(min-width:900px){.slide{flex-basis:60%;max-width:60%}}
+.slide img{width:100%;height:360px;object-fit:cover;border-top-left-radius:16px;border-top-right-radius:16px;display:block}
+.slide .caption{padding:12px 14px;color:var(--muted);font-size:14px}
+.nav-btn{
+  position:absolute;top:50%;transform:translateY(-50%);
+  background:rgba(0,0,0,.35);backdrop-filter:blur(4px);
+  border:1px solid rgba(255,255,255,.2);color:#fff;width:42px;height:42px;
+  border-radius:999px;display:flex;align-items:center;justify-content:center;cursor:pointer
+}
+.nav-btn:hover{background:rgba(0,0,0,.5)}
+.nav-prev{left:-6px} .nav-next{right:-6px}
+.dots{display:flex;gap:8px;justify-content:center;margin-top:10px}
+.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.25)}
+.dot.active{background:#fff}
+
+/* --- PDF block --- */
+.pdf-wrap{margin-top:18px}
+.pdf-frame{
+  width:100%;height:620px;border:1px solid rgba(255,255,255,.1);
+  border-radius:14px;background:#0d1320
+}
+.pdf-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.pdf-link{
+  display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;
+  color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.2)
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div>
+        <div class="sub">Web Application (UG Project)</div>
+        <h1><span class="highlight">Cargo Management System</span></h1>
+        <p class="lead">A web-based platform to streamline logistics workflows, improve shipment visibility, and support bulk cargo operations for a simulated transport company. <!-- remove citation tokens in live site --></p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Overview</h2>
+        <p>Built as a full-stack application with a focus on clean UI and reliable data flow, the system centralizes cargo records and operational tasks. It provides inventory tracking, shipment management, and reporting to reduce manual effort and errors.</p>
+      </div>
+      <div class="card">
+        <h2>My Role</h2>
+        <p>I led end-to-end development—front-end screens, form validations, server-side modules, and database design—ensuring consistent UX and maintainable code.</p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Key Features</h2>
+        <p>Shipment lifecycle tracking from booking to delivery, bulk cargo workflows, role-based access for staff and admin, and searchable logs with export-ready summaries.</p>
+      </div>
+      <div class="card">
+        <h2>Tech Stack</h2>
+        <p>HTML, CSS, JavaScript for the UI; PHP/ASP for server logic; MySQL for persistence; deployed on a LAMP-style setup during development. </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Outcome</h2>
+      <p>Delivered a cohesive system that demonstrates practical CRUD design, modular code structure, and clear separation of concerns suitable for logistics operations.</p>
+      <a class="btn small" href="index.html#projects"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>
+    </div>
+
+    <!-- REFERENCES: Image Slider -->
+    <div class="card" id="references">
+      <div class="sub">References</div>
+      <h2>Design & System References</h2>
+      <p>Key visuals and diagrams I referenced during development—architecture, UI flows, and shipment lifecycle mapping.</p>
+
+      <div class="slider">
+        <button class="nav-btn nav-prev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="viewport" id="refViewport">
+          <!-- Slide 1 -->
+          <figure class="slide">
+            <img src="images/references/ref1.png" alt="System architecture diagram for cargo management" />
+            <figcaption class="caption">High-level architecture: client, API, auth, DB layers.</figcaption>
+          </figure>
+          <!-- Slide 2 -->
+          <figure class="slide">
+            <img src="images/references/ref2.png" alt="Shipment lifecycle flow" />
+            <figcaption class="caption">Shipment lifecycle: booking → dispatch → in-transit → delivery.</figcaption>
+          </figure>
+          <!-- Slide 3 -->
+          <figure class="slide">
+            <img src="images/references/ref3.png" alt="Admin dashboard wireframe" />
+            <figcaption class="caption">Admin dashboard wireframe with KPIs and quick actions.</figcaption>
+          </figure>
+          <!-- Slide 4 -->
+          <figure class="slide">
+            <img src="images/references/ref4.png" alt="Database ER diagram" />
+            <figcaption class="caption">ER diagram: shipments, items, users, roles, logs.</figcaption>
+          </figure>
+        </div>
+        <button class="nav-btn nav-next" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+        <div class="dots" id="refDots" aria-hidden="true"></div>
+      </div>
+    </div>
+
+    <!-- SUPPORTING DOCUMENT: PDF -->
+    <div class="card" id="supporting-document">
+      <div class="sub">Document</div>
+      <h2>Project Report / SRS (PDF)</h2>
+      <p>You can view the document inline or download it for offline reading.</p>
+
+      <!-- Replace src with your real PDF path -->
+      <object class="pdf-frame" data="CARGO.pdf" type="application/pdf">
+        <iframe class="pdf-frame" src="CARGO.pdf" title="Cargo Management System PDF"></iframe>
+      </object>
+
+      <div class="pdf-actions">
+        <a class="pdf-link" href="CARGO.pdf" target="_blank" rel="noopener">
+          <i class="fa-solid fa-up-right-from-square"></i> Open in new tab
+        </a>
+        <a class="pdf-link" href="CARGO.pdf" download>
+          <i class="fa-solid fa-download"></i> Download PDF
+        </a>
+      </div>
+    </div>
+  </div>
+
+<script>
+/* Lightweight slider controls */
+(function(){
+  const viewport = document.getElementById('refViewport');
+  const dotsWrap = document.getElementById('refDots');
+  const slides = Array.from(viewport.querySelectorAll('.slide'));
+  const prev = document.querySelector('.nav-prev');
+  const next = document.querySelector('.nav-next');
+
+  // Create dots
+  slides.forEach((_, i) => {
+    const d = document.createElement('span');
+    d.className = 'dot' + (i===0 ? ' active' : '');
+    d.addEventListener('click', () => {
+      viewport.scrollTo({left: slides[i].offsetLeft - viewport.offsetLeft, behavior: 'smooth'});
+    });
+    dotsWrap.appendChild(d);
+  });
+
+  const dots = Array.from(dotsWrap.querySelectorAll('.dot'));
+
+  function updateActiveDot(){
+    // Find the slide closest to the center of the viewport
+    const center = viewport.scrollLeft + viewport.clientWidth / 2;
+    let idx = 0, min = Infinity;
+    slides.forEach((el, i) => {
+      const elCenter = el.offsetLeft + el.offsetWidth / 2;
+      const dist = Math.abs(center - elCenter);
+      if (dist < min) { min = dist; idx = i; }
+    });
+    dots.forEach(d => d.classList.remove('active'));
+    if (dots[idx]) dots[idx].classList.add('active');
+  }
+
+  viewport.addEventListener('scroll', () => { requestAnimationFrame(updateActiveDot); });
+
+  function snapBy(delta){
+    const current = slides.findIndex(el => {
+      const left = el.offsetLeft - viewport.scrollLeft;
+      return Math.abs(left) < el.offsetWidth * 0.4;
+    });
+    const target = Math.min(Math.max(current + delta, 0), slides.length - 1);
+    viewport.scrollTo({left: slides[target].offsetLeft - viewport.offsetLeft, behavior: 'smooth'});
+  }
+
+  prev.addEventListener('click', () => snapBy(-1));
+  next.addEventListener('click', () => snapBy(1));
+
+  // On load, ensure first dot is correct
+  updateActiveDot();
+})();
+</script>
+</body>
+</html>

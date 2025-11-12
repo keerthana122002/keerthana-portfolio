@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hospital Website Revamp | Keerthana S</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<style>
+:root{--bg:#070b14;--card:#0f1626;--text:#e9f0ff;--muted:#9aa6bf;--accent:#00e5a8;--accent2:#6ea8ff;--hot:#ff7ac3;--radius:20px}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(1200px 600px at 10% 10%,rgba(110,168,255,.18),transparent),radial-gradient(1000px 500px at 90% 0%,rgba(0,229,168,.12),transparent),var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif}
+.container{max-width:1100px;margin:auto;padding:44px 20px}
+.header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+h1{font-family:Poppins,Inter,sans-serif;font-size:40px;margin:8px 0 6px}
+.highlight{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;color:transparent}
+.lead{color:var(--muted);font-size:18px;margin:6px 0 18px}
+.badges{display:flex;gap:10px;flex-wrap:wrap}
+.badge{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#0b1220;background:linear-gradient(135deg,#fff,rgba(255,255,255,.7));border-radius:999px;padding:8px 12px}
+.hero{display:grid;grid-template-columns:1.3fr .7fr;gap:22px;align-items:center}
+.hero-card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:22px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+.kpi{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px;text-align:center}
+.kpi .num{font-size:28px;font-weight:700}
+.kpi .label{font-size:12px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:999px;text-decoration:none;color:#051225;background:linear-gradient(135deg,var(--accent),var(--accent2));font-weight:700}
+.btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.25)}
+
+.section{margin-top:24px}
+.section .sub{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:22px}
+.grid{display:grid;gap:16px}
+.grid.two{grid-template-columns:1fr 1fr}
+.grid.three{grid-template-columns:repeat(3,1fr)}
+@media(max-width:920px){.hero{grid-template-columns:1fr}.grid.two{grid-template-columns:1fr}.grid.three{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.grid.three{grid-template-columns:1fr}}
+
+.feature{display:flex;gap:12px;align-items:flex-start;padding:14px;border-radius:16px;border:1px solid rgba(255,255,255,.08)}
+.feature i{font-size:20px}
+.feature .text{color:var(--muted)}
+
+/* Slider */
+.slider{position:relative;margin-top:12px}
+.slider .viewport{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scroll-behavior:smooth}
+.slider .viewport::-webkit-scrollbar{height:8px}
+.slider .viewport::-webkit-scrollbar-track{background:rgba(255,255,255,.06);border-radius:999px}
+.slider .viewport::-webkit-scrollbar-thumb{background:rgba(255,255,255,.18);border-radius:999px}
+.slide{flex:0 0 80%;max-width:80%;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:18px;scroll-snap-align:center}
+@media(min-width:1000px){.slide{flex-basis:55%;max-width:55%}}
+.slide img{width:100%;height:360px;object-fit:cover;border-top-left-radius:18px;border-top-right-radius:18px;display:block}
+.slide .caption{padding:12px 14px;color:var(--muted);font-size:14px}
+.nav-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.35);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.2);color:#fff;width:42px;height:42px;border-radius:999px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.nav-btn:hover{background:rgba(0,0,0,.55)}
+.nav-prev{left:-6px}.nav-next{right:-6px}
+.dots{display:flex;gap:8px;justify-content:center;margin-top:10px}
+.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.25)}
+.dot.active{background:#fff}
+
+.footer-back{display:inline-flex;align-items:center;gap:8px;margin-top:30px;color:#fff;text-decoration:none;background:transparent;border:1px solid rgba(255,255,255,.2);padding:10px 14px;border-radius:12px}
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div>
+        <div class="badges">
+          <span class="badge">Web Design</span>
+          <span class="badge">Healthcare</span>
+          <span class="badge">Responsive</span>
+        </div>
+        <h1><span class="highlight">Sri Venkateshwaraa Hospital Website</span></h1>
+        <p class="lead">A modern, patient‑first website experience highlighting departments, doctors, appointments, and facilities with fast navigation and clean accessibility.</p>
+        <div class="cta">
+          <a class="btn" href="https://sveng.srivenkateshwaraa.edu.in" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square"></i> Visit Live Site</a>
+          <a class="btn ghost" href="index.html#projects"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero section">
+      <div class="hero-card">
+        <div class="sub">Overview</div>
+        <h2 style="margin:0 0 8px">Project Snapshot</h2>
+        <p class="lead" style="margin:0">Built a sleek, mobile‑friendly hospital website that surfaces critical actions quickly—find a doctor, explore departments, book appointments, and locate facilities—while keeping content structured and accessible.</p>
+        <div class="kpis">
+          <div class="kpi"><div class="num">20+ </div><div class="label">Departments</div></div>
+          <div class="kpi"><div class="num">50+ </div><div class="label">Doctors</div></div>
+          <div class="kpi"><div class="num">24×7</div><div class="label">Emergency</div></div>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="feature"><i class="fa-solid fa-user-doctor"></i><div class="text"><strong>Find a Doctor</strong><br/>Searchable doctor list with specialties, qualifications, and quick contact.</div></div>
+        <div class="feature"><i class="fa-solid fa-stethoscope"></i><div class="text"><strong>Departments</strong><br/>Clear department pages outlining treatments, procedures, and care paths.</div></div>
+        <div class="feature"><i class="fa-solid fa-calendar-check"></i><div class="text"><strong>Appointments</strong><br/>Prominent CTA for consultation booking with minimal input steps.</div></div>
+        <div class="feature"><i class="fa-solid fa-hospital"></i><div class="text"><strong>Facilities</strong><br/>Showcase of diagnostic labs, ICUs, operation theaters, and pharmacy.</div></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="sub">Experience</div>
+      <h2>Design Goals</h2>
+      <div class="grid two">
+        <div class="card"><strong>Accessibility First</strong><p>High color contrast, scalable fonts, and keyboard‑friendly navigation to ensure inclusive browsing.</p></div>
+        <div class="card"><strong>Fast & Organized</strong><p>Information architecture that routes users to doctors, departments, and appointments in two clicks.</p></div>
+        <div class="card"><strong>Trust‑building Visuals</strong><p>Clean hero areas, concise copy, and recognition badges to communicate credibility.</p></div>
+        <div class="card"><strong>Mobile Optimized</strong><p>Responsive layouts with touch‑friendly controls, tested across device sizes.</p></div>
+      </div>
+    </div>
+
+    <div class="section card">
+      <div class="sub">Gallery</div>
+      <h2>UI Screens & Highlights</h2>
+      <p>Key screens and visual references used for the build—hero, doctors, departments, and appointment flows.</p>
+      <div class="slider">
+        <button class="nav-btn nav-prev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="viewport" id="refViewport">
+          <figure class="slide">
+            <img src="images/hospital/ref1.png" alt="Hospital website hero section" />
+            <figcaption class="caption">Homepage hero with primary CTAs: Find a Doctor & Book Appointment.</figcaption>
+          </figure>
+          <figure class="slide">
+            <img src="images/hospital/ref2.png" alt="Doctors listing grid" />
+            <figcaption class="caption">Doctors directory with filters by specialty and experience.</figcaption>
+          </figure>
+          <figure class="slide">
+            <img src="images/hospital/ref3.png" alt="Department overview cards" />
+            <figcaption class="caption">Department overview cards linking to detailed care pages.</figcaption>
+          </figure>
+          <figure class="slide">
+            <img src="images/hospital/ref4.png" alt="Appointment form UI" />
+            <figcaption class="caption">Streamlined appointment form with minimal required fields.</figcaption>
+          </figure>
+        </div>
+        <button class="nav-btn nav-next" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+        <div class="dots" id="refDots" aria-hidden="true"></div>
+      </div>
+    </div>
+
+    <a class="footer-back" href="index.html#projects"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>
+  </div>
+
+<script>
+// Slider logic
+(function(){
+  const viewport = document.getElementById('refViewport');
+  const dotsWrap = document.getElementById('refDots');
+  const slides = Array.from(viewport.querySelectorAll('.slide'));
+  const prev = document.querySelector('.nav-prev');
+  const next = document.querySelector('.nav-next');
+
+  slides.forEach((_, i) => {
+    const d = document.createElement('span');
+    d.className = 'dot' + (i===0 ? ' active' : '');
+    d.addEventListener('click', () => {
+      viewport.scrollTo({left: slides[i].offsetLeft - viewport.offsetLeft, behavior: 'smooth'});
+    });
+    dotsWrap.appendChild(d);
+  });
+
+  const dots = Array.from(dotsWrap.querySelectorAll('.dot'));
+
+  function updateActiveDot(){
+    const center = viewport.scrollLeft + viewport.clientWidth / 2;
+    let idx = 0, min = Infinity;
+    slides.forEach((el, i) => {
+      const elCenter = el.offsetLeft + el.offsetWidth / 2;
+      const dist = Math.abs(center - elCenter);
+      if (dist < min) { min = dist; idx = i; }
+    });
+    dots.forEach(d => d.classList.remove('active'));
+    if (dots[idx]) dots[idx].classList.add('active');
+  }
+
+  viewport.addEventListener('scroll', () => { requestAnimationFrame(updateActiveDot); });
+
+  function snapBy(delta){
+    const current = slides.findIndex(el => {
+      const left = el.offsetLeft - viewport.scrollLeft;
+      return Math.abs(left) < el.offsetWidth * 0.4;
+    });
+    const target = Math.min(Math.max(current + delta, 0), slides.length - 1);
+    viewport.scrollTo({left: slides[target].offsetLeft - viewport.offsetLeft, behavior: 'smooth'});
+  }
+
+  prev.addEventListener('click', () => snapBy(-1));
+  next.addEventListener('click', () => snapBy(1));
+
+  updateActiveDot();
+})();
+</script>
+</body>
+</html>
