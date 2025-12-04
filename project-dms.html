@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document Management System – Project</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- Swiper CSS (RELIABLE CDN) -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+
+<style>
+    body {
+        background: #0d1117;
+        color: #d6d6d6;
+        font-family: "Inter", sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.7;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+        padding: 40px 0;
+    }
+
+    .tag-group {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .tag {
+        background: #21262d;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 13px;
+        color: #58a6ff;
+        border: 1px solid #30363d;
+    }
+
+    h1 {
+        color: white;
+        font-size: 36px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        color: #c2c2c2;
+    }
+
+    .btn {
+        display: inline-block;
+        background: #238636;
+        padding: 10px 20px;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        margin-right: 10px;
+        font-size: 15px;
+    }
+
+    .btn.secondary {
+        background: #30363d;
+    }
+
+    .section-title {
+        font-size: 24px;
+        color: white;
+        margin-top: 50px;
+        margin-bottom: 15px;
+    }
+
+    /* Cards */
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .card {
+        background: #161b22;
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid #30363d;
+    }
+
+    .card h3 {
+        color: #fff;
+        margin-bottom: 10px;
+    }
+
+    /* Video */
+    .video-box {
+        margin-top: 20px;
+        background: #161b22;
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid #30363d;
+    }
+
+    video {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    /* Swiper Slider */
+    .swiper {
+        width: 100%;
+        margin-top: 20px;
+        border-radius: 12px;
+        height: 450px !important;
+        overflow: hidden;
+    }
+
+    .swiper-wrapper {
+        display: flex;
+    }
+
+    .swiper-slide {
+        width: 100% !important;
+    }
+
+    .swiper-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Tags -->
+    <div class="tag-group">
+        <div class="tag">Web App</div>
+        <div class="tag">Automation</div>
+        <div class="tag">Institution Project</div>
+    </div>
+
+    <!-- Title -->
+    <h1>Document Management System – Sri Venkateshwara Group of Institutions</h1>
+    <p>A workflow-driven document management platform built to streamline file handling, department approvals, and secure document storage across the institution.</p>
+
+    <!-- Buttons -->
+    
+    <a href="../projects.html" class="btn secondary">← Back to Projects</a>
+
+    <!-- Snapshot -->
+    <h2 class="section-title">Project Snapshot</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h3>Workflow Automation</h3>
+            <p>Complete approval flow for staff, management, and admin levels.</p>
+        </div>
+        <div class="card">
+            <h3>Secure Access</h3>
+            <p>Role-based authentication for Departments, Management, and Admin.</p>
+        </div>
+        <div class="card">
+            <h3>Document Tracking</h3>
+            <p>Track, review, approve, and archive documents with full activity logs.</p>
+        </div>
+        <div class="card">
+            <h3>Dashboard Insights</h3>
+            <p>Clean dashboard for viewing requests, uploads, and approval status.</p>
+        </div>
+    </div>
+
+    <!-- Design Goals -->
+    <h2 class="section-title">Design Goals</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h3>Simple & Fast</h3>
+            <p>Organized navigation for departments and management to quickly access files.</p>
+        </div>
+        <div class="card">
+            <h3>Clear Workflow</h3>
+            <p>Step-by-step document movement from submission to approval.</p>
+        </div>
+        <div class="card">
+            <h3>Mobile Friendly</h3>
+            <p>Responsive pages for convenient access on all devices.</p>
+        </div>
+        <div class="card">
+            <h3>Secure Storage</h3>
+            <p>Documents stored with strict access control and folder-level permissions.</p>
+        </div>
+    </div>
+
+    <!-- Video Preview -->
+    <h2 class="section-title">Project Screen Recording</h2>
+    <div class="video-box">
+        <video controls>
+            <source src="assets/dms-demo.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Image Slider -->
+    <h2 class="section-title">UI Screens & Highlights</h2>
+
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="images/dms/dms1.png"></div>
+            <div class="swiper-slide"><img src="images/dms/dms2.png"></div>
+            <div class="swiper-slide"><img src="images/dms/dms3.png"></div>
+            <div class="swiper-slide"><img src="images/dms/dms4.png"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+</div>
+
+<!-- Swiper JS (RELIABLE CDN) -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        autoplay: {
+            delay: 2500,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+});
+</script>
+
+</body>
+</html>
