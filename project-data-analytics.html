@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Election Data Analytics & ML Project</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+
+<style>
+body {
+    background: #0d1117;
+    color: #d6d6d6;
+    font-family: "Inter", sans-serif;
+    margin: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 0;
+}
+
+.tag-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tag {
+    background: #21262d;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    color: #58a6ff;
+    border: 1px solid #30363d;
+}
+
+h1 {
+    color: white;
+    font-size: 34px;
+}
+
+p {
+    color: #c2c2c2;
+}
+
+.btn {
+    display: inline-block;
+    background: #238636;
+    padding: 10px 18px;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.btn.secondary {
+    background: #30363d;
+}
+
+.section-title {
+    font-size: 24px;
+    color: white;
+    margin-top: 50px;
+    margin-bottom: 15px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #161b22;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #30363d;
+}
+
+.card h3 {
+    color: #fff;
+}
+
+/* Highlight box */
+.highlight {
+    background: linear-gradient(135deg, #1f6feb, #238636);
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    color: white;
+}
+
+.swiper {
+    margin-top: 20px;
+    border-radius: 12px;
+    height: 450px !important;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Tags -->
+    <div class="tag-group">
+        <div class="tag">Data Analytics</div>
+        <div class="tag">Machine Learning</div>
+        <div class="tag">Power BI</div>
+        <div class="tag">Self Project</div>
+    </div>
+
+    <!-- Title -->
+    <h1>Election Predictive Analysis – TN & Puducherry</h1>
+    <p>
+        A complete end-to-end Data Analytics and Machine Learning project analyzing 243 constituencies,
+        predicting election winners using Random Forest, and visualizing insights through an interactive Power BI dashboard.
+    </p>
+
+    <!-- Buttons -->
+    <a href="index.html#projects" class="btn secondary">← Back to Projects</a>
+
+    <!-- Workflow -->
+    <h2 class="section-title">Project Workflow</h2>
+    <div class="highlight">
+        Raw Dataset → Python (Analysis + ML) → CSV Outputs → Power BI Dashboard (4 Pages)
+    </div>
+
+    <!-- Features -->
+    <h2 class="section-title">Key Highlights</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h3>Data Analysis</h3>
+            <p>Processed 2,187 rows of election data across 243 constituencies using Python.</p>
+        </div>
+        <div class="card">
+            <h3>Feature Engineering</h3>
+            <p>Created advanced features like vote share, rank, vote margin, and alliance metrics.</p>
+        </div>
+        <div class="card">
+            <h3>ML Model</h3>
+            <p>Trained a Random Forest model achieving 100% prediction accuracy.</p>
+        </div>
+        <div class="card">
+            <h3>Dashboard</h3>
+            <p>Built a 4-page interactive Power BI dashboard for insights and decision-making.</p>
+        </div>
+    </div>
+
+    <!-- Dashboard Pages -->
+    <h2 class="section-title">Power BI Dashboard</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h3>Overview</h3>
+            <p>KPI cards, seats distribution, alliance insights, and filters.</p>
+        </div>
+        <div class="card">
+            <h3>Region Analysis</h3>
+            <p>Region-wise winners, party performance, and comparisons.</p>
+        </div>
+        <div class="card">
+            <h3>ML Predictions</h3>
+            <p>Prediction results with probabilities and model insights.</p>
+        </div>
+        <div class="card">
+            <h3>Vote Margins</h3>
+            <p>Top margins, margin types, and detailed breakdown.</p>
+        </div>
+    </div>
+
+    <!-- Tech Stack -->
+    <h2 class="section-title">Technologies Used</h2>
+    <div class="card-grid">
+        <div class="card"><h3>Python</h3><p>Data processing & machine learning</p></div>
+        <div class="card"><h3>pandas</h3><p>Data manipulation</p></div>
+        <div class="card"><h3>scikit-learn</h3><p>Random Forest model</p></div>
+        <div class="card"><h3>Power BI</h3><p>Interactive dashboard</p></div>
+    </div>
+
+    <!-- Results -->
+    <h2 class="section-title">Key Results</h2>
+    <div class="card-grid">
+        <div class="card"><h3>243</h3><p>Constituencies Analyzed</p></div>
+        <div class="card"><h3>9</h3><p>Political Parties</p></div>
+        <div class="card"><h3>100%</h3><p>Model Accuracy</p></div>
+        <div class="card"><h3>91%</h3><p>Landslide Wins</p></div>
+    </div>
+
+    <!-- Screens -->
+    <h2 class="section-title">Project Visuals</h2>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="images/analytics/a1.png"></div>
+            <div class="swiper-slide"><img src="images/analytics/a2.png"></div>
+            <div class="swiper-slide"><img src="images/analytics/a3.png"></div>
+            <div class="swiper-slide"><img src="images/analytics/a4.png"></div>
+            <div class="swiper-slide"><img src="images/analytics/a5.png"></div>
+            <div class="swiper-slide"><img src="images/analytics/a6.png"></div>
+            <div class="swiper-slide"><img src="images/analytics/a7.png"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+</div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script>
+new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    loop: true,
+    autoplay: {
+        delay: 2500,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+});
+</script>
+
+</body>
+</html>
